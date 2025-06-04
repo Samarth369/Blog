@@ -1,0 +1,37 @@
+.theform {
+    width: 90%;
+    border: 1px solid aliceblue;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.filein {
+    margin: 10px;
+}
+
+.theheading {
+    display: flex;
+    justify-content: center;
+}
+
+.theheading input {
+    width: 95%;
+    justify-self: center;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+.theform h1 {
+    margin: 10px 0px;
+    justify-self: center;
+}
+
+.para {
+    width: 100%;
+}
+
+.para textarea {
+    width: 95%;
+    justify-self: center;
+}
