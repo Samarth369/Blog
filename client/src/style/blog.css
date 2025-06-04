@@ -1,0 +1,9 @@
+.blogs-block {
+    width: 90%;
+    margin: 10px 0px 0px 0px;
+    justify-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
