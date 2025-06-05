@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const blogSchema = mongoose.Schema({
     img: {
-        type: String
+        type: Buffer
     },
     mimetype: {
         type: String

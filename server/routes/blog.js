@@ -7,18 +7,14 @@ const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
 
 route.get( '/blog' ,async ( req , res ) => {
-    const blogg = await blog.find({})
-    
-    res.set("Content-Type",blogg.mimetype)
-    
-    res.json({
-        res: blogg,
-    })
+    const blogg = await blog.find({})    
+    res.json(blogg)
 })
 
 route.post( '/createblog' , upload.single('file') , async ( req , res ) => {
     const { Heading , para } = req.body
     const { originalname , mimetype , buffer } = req.file
+
     await blog.create({
         img: buffer,
         mimetype: mimetype,
