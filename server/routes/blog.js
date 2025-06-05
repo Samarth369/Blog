@@ -6,14 +6,26 @@ const multer = require('multer')
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
 
-route.get( '/blog' , ( req , res ) => {
+route.get( '/blog' ,async ( req , res ) => {
+    const blogg = await blog.find({})
+    
+    res.set("Content-Type",blogg.mimetype)
+    
     res.json({
-        res: blog
+        res: blogg,
     })
 })
 
-route.post( '/createblog' , upload.single('file') ,async ( req , res ) => {
-    console.log(req.file);
+route.post( '/createblog' , upload.single('file') , async ( req , res ) => {
+    const { Heading , para } = req.body
+    const { originalname , mimetype , buffer } = req.file
+    await blog.create({
+        img: buffer,
+        mimetype: mimetype,
+        imgname: originalname,
+        title: Heading,
+        para: para
+    })
 })
 
 

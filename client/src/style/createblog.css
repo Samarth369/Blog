@@ -29,9 +29,26 @@
 
 .para {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .para textarea {
     width: 95%;
-    justify-self: center;
+    padding: 5px;
+    font: 1em sans-serif;
+    margin: 10px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.btn button {
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
